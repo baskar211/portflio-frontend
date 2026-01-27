@@ -1,9 +1,9 @@
-@import 'tailwindcss';
-
 /* Import fonts first */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
 /* Then your CSS rules */
+@import 'tailwindcss';
+
+
 
 body {
   font-family: 'Poppins', sans-serif;
