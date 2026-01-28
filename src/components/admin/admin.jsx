@@ -7,21 +7,9 @@ const API_URL = import.meta.env.VITE_BACKEND_URI;
 
 
 export default function Admin() {
-const navigate = useNavigate();
-
-useEffect(()=>{
-
-    return()=>{
-        sessionStorage.removeItem("isAdmin")
-    }
-},[])
-const handleLogout = ()=>{
-    sessionStorage.removeItem("isAdmin");
-    navigate('/admin-login')
-}
-
-    return (
-        <>
+  
+  return (
+    <>
         <SideNavigationUserProfile/>
         <div className='bg-slate-200 h-screen w-full'>
             <h2 className='text-5xl animate-bounce font-fold text-center  capitalize py-5'>welcome admin planel</h2>
@@ -36,32 +24,32 @@ const handleLogout = ()=>{
         </div>
         </>
     )
-}
-
-
-function Form({ uri, name }) {
+  }
+  
+  
+  function Form({ uri, name }) {
     const [data, setdata] = useState([])
     const [show,setshow] = useState(true)
-
-
+    
+    
     const fectchdata = async () => {
-        try {
-            const response = await axios.get(uri)
-            setdata(response.data)
-            setshow(true)
-        }
-        catch (err) {
-            setshow(false)
-            console.log('server sleeping ... retrying')
-            setTimeout(fectchdata, 3000)
-        }
+      try {
+        const response = await axios.get(uri)
+        setdata(response.data)
+        setshow(true)
+      }
+      catch (err) {
+        setshow(false)
+        console.log('server sleeping ... retrying')
+        setTimeout(fectchdata, 3000)
+      }
     }
     useEffect(() => {
-        fectchdata()
+      fectchdata()
     }, [])
-
+    
     return (
-        <>
+      <>
             <div className=''>
                 <h2 className='pl-10 text-2xl  mb-4   capitalize '>{name} details</h2>
                 <div>
@@ -79,7 +67,7 @@ function Form({ uri, name }) {
 
                             <tbody>
                                 {data.map((i) => (
-                                    <tr key={i._id} className="text-center">
+                                  <tr key={i._id} className="text-center">
                                         <td className="border p-2">{i.name}</td>
                                         <td className="border p-2">{i.email}</td>
                                         <td className="border p-2">{i.service}</td>
@@ -95,15 +83,27 @@ function Form({ uri, name }) {
 
         </>
     )
-}
-
-
-
- function SideNavigationUserProfile() {
-  const [isSideNavOpen, setIsSideNavOpen] = useState(false)
-
-  return (
-    <>
+  }
+  
+  
+  
+  function SideNavigationUserProfile() {
+    const navigate = useNavigate();
+    const [isSideNavOpen, setIsSideNavOpen] = useState(false)
+    
+    useEffect(()=>{
+    
+        return()=>{
+            sessionStorage.removeItem("isAdmin")
+        }
+    },[])
+    const handleLogout = ()=>{
+      sessionStorage.removeItem("isAdmin");
+      navigate('/admin-login')
+    }
+    
+    return (
+      <>
       {/*  <!-- Component: Side navigation menu with user profile and alert message --> */}
       {/*  <!-- Mobile trigger --> */}
       <button
@@ -111,8 +111,8 @@ function Form({ uri, name }) {
         type="button"
         className={`visible fixed left-6 top-6 z-40 order-10 block h-10 w-10 self-center rounded bg-white opacity-100 lg:hidden ${
           isSideNavOpen
-            ? "visible opacity-100 [&_span:nth-child(1)]:w-6 [&_span:nth-child(1)]:translate-y-0 [&_span:nth-child(1)]:rotate-45 [&_span:nth-child(3)]:w-0 [&_span:nth-child(2)]:-rotate-45 "
-            : ""
+          ? "visible opacity-100 [&_span:nth-child(1)]:w-6 [&_span:nth-child(1)]:translate-y-0 [&_span:nth-child(1)]:rotate-45 [&_span:nth-child(3)]:w-0 [&_span:nth-child(2)]:-rotate-45 "
+          : ""
         }`}
         aria-haspopup="menu"
         aria-label="Side navigation"
@@ -456,7 +456,7 @@ function Form({ uri, name }) {
               </svg>
             </div>
             <div className="flex w-full flex-1 flex-col items-start justify-center gap-0 overflow-hidden truncate text-sm font-medium">
-              Logout
+              <button onClick={handleLogout}>Logout</button>
             </div>
           </a>
         </footer>
