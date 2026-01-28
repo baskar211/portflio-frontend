@@ -7,11 +7,7 @@ const caseStudies = [
     title: 'E-Commerce Website Redesign',
     description:
       'A complete redesign of an online store to improve UX, speed, and conversion rate. Built using React & TailwindCSS.',
-<<<<<<< HEAD
     image: '/public/digital-marketing (3).png',
-=======
-    image: 'https://via.placeholder.com/600x400',
->>>>>>> 87f299ee25f1781ab6c149b28158aec2a4a05249
     link: '#',
   },
   {
@@ -19,11 +15,7 @@ const caseStudies = [
     title: 'Portfolio Website for Designer',
     description:
       'A modern personal portfolio site with animations and responsive design using Framer Motion and TailwindCSS.',
-<<<<<<< HEAD
     image: '/public/digital-marketing (1).png',
-=======
-    image: 'https://via.placeholder.com/600x400',
->>>>>>> 87f299ee25f1781ab6c149b28158aec2a4a05249
     link: '#',
   },
   {
@@ -31,11 +23,7 @@ const caseStudies = [
     title: 'Restaurant Booking App UI',
     description:
       'UI concept for a restaurant table booking platform with smooth transitions and modern layout.',
-<<<<<<< HEAD
     image: '/public/digital-marketing (2).png',
-=======
-    image: 'https://via.placeholder.com/600x400',
->>>>>>> 87f299ee25f1781ab6c149b28158aec2a4a05249
     link: '#',
   },
 ];
