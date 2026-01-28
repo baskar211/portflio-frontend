@@ -15,13 +15,19 @@ import CaseStudy from "./components/CaseStudy";
 import BookOrder from "./components/BookNow";
 
 import AdminLogin from "./components/admin/adminlogin";
-import Admin from "./components/admin/admin";
+import AdminLayout from "./components/admin/AdminLayout";
+import AdminDashboard from "./components/admin/AdminDashboard";
+import OrderDetails from "./components/admin/utilities/OrderDeatils";
+
 import ProtectedRoute from "./routes/ProtectedRoute";
+import FormDetails from "./components/admin/utilities/FormDeatisl";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+
+        {/* Public */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
@@ -38,14 +44,19 @@ export default function App() {
 
         <Route path="/admin-login" element={<AdminLogin />} />
 
+        {/* 🔐 Admin Protected + Nested */}
         <Route
           path="/admin"
           element={
             <ProtectedRoute>
-              <Admin />
+              <AdminLayout />
             </ProtectedRoute>
           }
-        />
+        >
+          <Route index element={<AdminDashboard />} />
+          <Route path="orders" element={<OrderDetails />} />
+          <Route path="forms" element={<FormDetails/>}/>
+        </Route>
 
         <Route path="*" element={<Home />} />
       </Routes>
