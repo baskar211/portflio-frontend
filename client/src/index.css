@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-/* Import fonts first */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-/* Then your CSS rules */
-@import 'tailwindcss';
-
-
-=======
 @import 'tailwindcss';
 
 /* Import fonts first */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 /* Then your CSS rules */
->>>>>>> 87f299ee25f1781ab6c149b28158aec2a4a05249
 
 body {
   font-family: 'Poppins', sans-serif;
