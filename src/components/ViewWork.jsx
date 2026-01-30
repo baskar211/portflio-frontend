@@ -2,6 +2,40 @@ import React from 'react';
 import Navbar from '../pages/Navbar';
 import { Link } from 'react-router-dom';
 
+const projectData = [
+  {
+    title: 'Digital Marketing Website', 
+    image: '/digital-marketing (1).png',
+    description:
+      'A modern online store built using React and TailwindCSS with product filters and cart functionality.',
+    link: 'https://villa-agency-baskar.vercel.app/',
+  },
+  {title: 'food order Website', 
+    image: '/digital-marketing (2).png',
+    description:
+      'A responsive food ordering website built with React and TailwindCSS.',
+    link: 'https://baskar-briyani-delivery.vercel.app/',
+  },
+  {title: 'E Commerce Website', 
+    image: '/digital-marketing (3).png',
+    description:
+      'An e-commerce platform built using Next.js and TailwindCSS.',
+    link: 'https://electro-baskar.vercel.app/',
+  },
+  {title: 'Static Website', 
+    image: '/static-template.png',
+    description:
+      'A static website template built with React and TailwindCSS.',
+    link: 'https://baskar-ai-website.netlify.app/',
+  },
+  {title: 'shop Website', 
+    image: '/shop-template.png',
+    description:
+      'A responsive shop website built with React and TailwindCSS.',
+    link: 'https://baskar-ai-website.netlify.app/',
+  },
+];
+
 export default function ViewWork() {
   return (
     <div>
@@ -14,73 +48,44 @@ export default function ViewWork() {
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
-          {/* Project 1 */}
-          <div className="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold">Digital Marketing Website</h3>
-            <img
-              src="/digital-marketing (1).png"
-              alt="Project 1"
-              className="rounded-lg mb-4"
-            />
          
-            <p className="text-gray-600 mt-2">
-              A modern online store built using React and TailwindCSS with
-              product filters and cart functionality.
-            </p>
-            <Link
-              to="https://villa-agency-baskar.vercel.app/"
-
-              className="text-indigo-600 underline mt-3 inline-block"
-            >
-              View Project →
-            </Link>
-          </div>
-
-          {/* Project 2 */}
-          <div className="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold capitalize">food order Website</h3>
-            <img
-              src="/digital-marketing (2).png"
-              alt="Project 2"
-              className="rounded-lg mb-4"
+          {projectData.map((project, index) => (
+            <Card
+            key={index}
+            title={project.title}
+            image={project.image}
+            description={project.description}
+            link={project.link}
             />
-         
-            <p className="text-gray-600 mt-2">
-              A responsive personal portfolio showcasing my works and contact
-              details.
-            </p>
-            <Link
-              to="https://baskar-briyani-delivery.vercel.app/"
-
-              className="text-indigo-600 underline mt-3 inline-block"
-            >
-              View Project →
-            </Link>
+          ))}
           </div>
-
-          {/* Project 3 */}
-          <div className="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold">E Commerce Website</h3>
-              
-            <img
-              src="/digital-marketing (3).png"
-              alt="Project 3"
-              className="rounded-lg mb-4"
-            />
-            <p className="text-gray-600 mt-2">
-              Designed a landing page for a local restaurant using Next.js and
-              Tailwind.
-            </p>
-            <Link
-              to="https://electro-baskar.vercel.app/"
-
-              className="text-indigo-600 underline mt-3 inline-block"
-            >
-              View Project →
-            </Link>
-          </div>
-        </div>
       </section>
     </div>
   );
+}
+
+function Card({ title, image, description, link }) {
+  return (
+    <div>
+ <div className="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold capitalize">{title}</h3>
+              
+            <img
+              src={image}
+              alt={title}
+              className="rounded-lg mb-4"
+            />
+            <p className="text-gray-600 mt-2">
+              {description}
+            </p>
+            <Link
+              to={link}
+
+              className="text-indigo-600 underline mt-3 inline-block"
+            >
+              View Project →
+            </Link>
+          </div>
+  </div>
+  )
 }
