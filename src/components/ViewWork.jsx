@@ -32,7 +32,7 @@ const projectData = [
     image: '/shop-template.png',
     description:
       'A responsive shop website built with React and TailwindCSS.',
-    link: 'https://baskar-ai-website.netlify.app/',
+    link: 'https://baskar-ecommerce-template.netlify.app/',
   },
 ];
 
