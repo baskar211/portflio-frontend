@@ -68,7 +68,7 @@ function Card({ title, image, description, link }) {
   return (
     <div>
  <div className="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold capitalize py-2">{title}</h3>
+            <h3 className="text-xl font-semibold capitalize md:py-2">{title}</h3>
               
             <img
               src={image}
