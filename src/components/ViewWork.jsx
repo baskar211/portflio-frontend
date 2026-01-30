@@ -25,7 +25,7 @@ const projectData = [
   {title: 'Static Website', 
     image: '/static-template.png',
     description:
-      'A static website template built with React and TailwindCSS.',
+      'A static website template built with HTML  and TailwindCSS.',
     link: 'https://baskar-ai-website.netlify.app/',
   },
   {title: 'shop Website', 
